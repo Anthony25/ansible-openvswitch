@@ -1,0 +1,45 @@
+---
+language: python
+python: "2.7"
+
+# Spin off separate builds for each of the following versions of Ansible
+env:
+  - ANSIBLE_VERSION=2.2
+  - ANSIBLE_VERSION=2.3
+
+# Require the standard build environment
+sudo: required
+
+# Require Docker
+services:
+  - docker
+
+# Cache Ansible and Molecule to speed things up
+cache:
+  - pip
+
+install:
+  # Install Ansible
+  - pip install "ansible~=$ANSIBLE_VERSION"
+
+  # Install Python API for Docker (required by Molecule Docker driver)
+  - pip install docker
+
+  # Install Molecule
+  - pip install molecule
+
+  # Check Ansible version
+  - ansible --version
+
+  # Check Molecule version
+  - molecule --version
+
+  # Build the Docker images
+  - molecule create
+  - molecule destroy
+
+script:
+  - molecule test
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
