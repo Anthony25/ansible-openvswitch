@@ -2,33 +2,23 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [ansible-openvswitch](#ansible-openvswitch)
-  - [Requirements](#requirements)
+- [ansible-role-openvswitch](#ansible-role-openvswitch)
   - [Role Variables](#role-variables)
-  - [Dependencies](#dependencies)
-  - [Example Playbook](#example-playbook)
   - [License](#license)
   - [Author Information](#author-information)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# ansible-openvswitch
+Ansible Role: OpenvSwitch
+==========================
 
-An [Ansible](https://www.ansible.com) role to install/configure [Open vSwitch](http://openvswitch.org/)
+[![Build Status](https://travis-ci.org/Anthony25/ansible-role-openvswitch.svg?branch=master)](https://travis-ci.org/Anthony25/ansible-role-openvswitch)
 
-> NOTE: This role replaces the old `ansible-openvswitch` role which is now
-> [ansible-openvswitch-old](https://github.com/mrlesmithjr/ansible-openvswitch-old)
-
-## Requirements
-
-None
+An [Ansible](https://www.ansible.com) multi-platform role to install/configure [Open vSwitch](http://openvswitch.org/)
 
 ## Role Variables
 
 ```yaml
----
-# defaults file for ansible-openvswitch
-
 openvswitch_bridges: []
   # - bridge: 'br-int'
   #   state: 'present'
@@ -47,7 +37,6 @@ openvswitch_system_tuning: []
 ```
 
 ```yaml
----
 # overriden variables, predefined by platform in `vars/`
 
 # packages to install
@@ -57,18 +46,13 @@ openvswitch_packages: []
 openvswitch_services: []
 ```
 
-
-## Dependencies
-
--   [ansible-config-interfaces](https://github.com/mrlesmithjr/ansible-config-interfaces)
-
-## Example Playbook
-
 ## License
 
 MIT
 
 ## Author Information
+
+Anthony25 \<Anthony Ruhier\>
 
 Larry Smith Jr.
 
