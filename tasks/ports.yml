@@ -3,6 +3,7 @@
   openvswitch_port:
     bridge: "{{ item[0]['bridge'] }}"
     port: "{{ item[1]['port'] }}"
+    set: "{{ item[1]['set']|default(omit) }}"
     state: "{{ item[1]['state'] }}"
     tag: "{{ item[1]['tag']|default(omit) }}"
     timeout: "{{ item[0]['timeout']|default(omit) }}"
