@@ -12,7 +12,7 @@ provisioner:
     group_vars:
       # some distributions need the openvswitch module loaded, and fail on
       # travis
-      no_ovs_service:
+      all:
         openvswitch_services: []
 
 platforms:
@@ -28,10 +28,10 @@ platforms:
     image: archlinux/base:latest
     command: /usr/lib/systemd/systemd
     privileged: true
-    groups:
-      - no_ovs_service
   - name: ansible-fedora
     image: fedora:latest
+    command: /usr/lib/systemd/systemd
+    privileged: true
 
 scenario:
   name: default
