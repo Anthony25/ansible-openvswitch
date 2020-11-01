@@ -16,8 +16,6 @@ provisioner:
         openvswitch_services: []
 
 platforms:
-  - name: ansible-ubuntu-16-04-lts
-    image: ubuntu:16.04
   - name: ansible-ubuntu-18-04-lts
     image: ubuntu:18.04
   - name: ansible-ubuntu-lts
